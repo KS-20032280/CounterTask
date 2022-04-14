@@ -2,58 +2,58 @@
 {
     public class Clock
     {
-        private int _hours;
-        private int _minutes;
-        private int _seconds;
+        private Counter _hours;
+        private Counter _minutes;
+        private Counter _seconds;
 
         //constructor that initializes all 3 values to 0
         public Clock()
         {
-            _hours = 0;
-            _minutes = 0;
-            _seconds = 0;
+            _hours = new Counter("hours");
+            _minutes = new Counter("minutes");
+            _seconds = new Counter("seconds");
         }
 
         #region properties
-        public int Hours
+        public Counter Hours
         { get { return _hours; } }
         
-        public int Minutes
+        public Counter Minutes
         { get { return _minutes; } }
 
-        public int Seconds
+        public Counter Seconds
         { get { return _seconds; } }
         #endregion
 
         public void Tick()
         {
-            _seconds++;
-            if(_seconds >= 60)
+            _seconds.Increment();
+            if(_seconds.Tick >= 60)
             {
-                _minutes++;
-                _seconds = 0;
+                _minutes.Increment();
+                _seconds.Reset();
             }
-            if (_minutes >= 60)
+            if (_minutes.Tick >= 60)
             {
-                _hours++;
-                _minutes = 0;
+                _hours.Increment();
+                _minutes.Reset();
             }
         }
 
         public string GetTimeAsString()
         {
-            string hoursString = _hours <= 10 ? $"0{_hours}" : _hours.ToString();
-            string minutesString = _minutes <= 10 ? $"0{_minutes}" : _minutes.ToString();
-            string secondsString = _seconds <= 10 ? $"0{_seconds}" : _seconds.ToString();
+            string hoursString = _hours.Tick <= 10 ? $"0{_hours}" : _hours.ToString();
+            string minutesString = _minutes.Tick <= 10 ? $"0{_minutes}" : _minutes.ToString();
+            string secondsString = _seconds.Tick <= 10 ? $"0{_seconds}" : _seconds.ToString();
 
             return hoursString + ":" + minutesString + ":" + secondsString;
         }
 
         public void Reset()
         {
-            _seconds = 0;
-            _minutes = 0;
-            _hours = 0;
+            _seconds.Reset();
+            _minutes.Reset();
+            _hours.Reset();
         }
     }
 }

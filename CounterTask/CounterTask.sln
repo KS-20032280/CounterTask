@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CounterTask", "CounterTask.csproj", "{07690F8E-A196-4482-BE2A-F53FEE1EBD22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCounterTask", "..\TestCounterTask\TestCounterTask.csproj", "{D57453D6-535A-4B28-A69C-1B491334361D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07690F8E-A196-4482-BE2A-F53FEE1EBD22} = {07690F8E-A196-4482-BE2A-F53FEE1EBD22}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07690F8E-A196-4482-BE2A-F53FEE1EBD22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07690F8E-A196-4482-BE2A-F53FEE1EBD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07690F8E-A196-4482-BE2A-F53FEE1EBD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07690F8E-A196-4482-BE2A-F53FEE1EBD22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D57453D6-535A-4B28-A69C-1B491334361D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57453D6-535A-4B28-A69C-1B491334361D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57453D6-535A-4B28-A69C-1B491334361D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57453D6-535A-4B28-A69C-1B491334361D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BDBD48A-AE9C-4DA6-9363-2E3C678CDCFB}
+	EndGlobalSection
+EndGlobal
